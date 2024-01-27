@@ -1,0 +1,15 @@
+/* themes.css */
+:root {
+    /* Default Light Theme */
+    --color-background: #FFFFFF;
+    --color-text: #000000;
+    /* ... other color variables */
+  }
+  
+  .theme-dark {
+    /* Dark Theme */
+    --color-background: #121212;
+    --color-text: #E0E0E0;
+    /* ... other color variables */
+  }
+  
