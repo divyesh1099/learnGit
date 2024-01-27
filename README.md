@@ -8,6 +8,12 @@ I am not sponsored by git or anyone, **THIS IS A PERSONAL OPEN SOURCE PROJECT**.
 
 Interactive Git Learning Platform is a web application designed to provide an engaging and interactive way for users to learn and understand Git. The platform uses animations, interactive tutorials, and scenario-based learning to teach Git concepts effectively.
 
+## Screenshots
+
+![image](https://github.com/divyesh1099/learnGit/assets/65925922/f8f39439-7d9d-454c-ae68-d6088f412a44)
+
+![image](https://github.com/divyesh1099/learnGit/assets/65925922/4d3e332f-91e6-44cc-9726-7d1a045af21d)
+
 ## Features
 
 - **Interactive Tutorials**: Step-by-step guides for learning Git.
@@ -79,5 +85,5 @@ Project Link: [https://github.com/divyesh1099/learnGit](https://github.com/youru
 
 ## Acknowledgments
 
-- Indian Navy's Hon. Commander Ajit Singh Sogarwal.
+- Hon. Cmd. Ajit Singh Sogarwal.
 - ChatGPT.
