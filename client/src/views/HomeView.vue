@@ -1,8 +1,15 @@
 <template>
     <div class="home">
       <div class="section welcome-section">
-        <h1>Welcome to the Git Learning Platform</h1>
-      </div>
+      <h1>Welcome to the <span class="git" id="git">Git</span> Learning Platform</h1>
+    </div>
+    <div class="section introduction-section">
+      <h2 id="git-target">What is Git?</h2>
+      <p>
+        Git is a distributed version control system designed to handle everything from small to very large projects with speed and efficiency...
+        <!-- More content about Git -->
+      </p>
+    </div>
       <div class="section select-type-section">
         <div class="select-type-content">
           <h2>Select Type</h2>
@@ -23,8 +30,36 @@
   
   export default {
     name: 'HomeView',
-    mounted() {
-      gsap.registerPlugin(ScrollTrigger);
+  mounted() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Variables for start and end positions
+    let git = document.querySelector('#git');
+    let target = document.querySelector('#git-target');
+
+    // Calculate end position when the page is fully loaded and on resize
+    let endX, endY;
+    const calculatePosition = () => {
+      let gitRect = git.getBoundingClientRect();
+      let targetRect = target.getBoundingClientRect();
+      endX = targetRect.left - gitRect.left + window.scrollX;
+      endY = targetRect.top - gitRect.top + window.scrollY;
+    };
+    window.addEventListener('load', calculatePosition);
+    window.addEventListener('resize', calculatePosition);
+
+    // GSAP animation
+    gsap.to(git, {
+      x: () => endX,
+      y: () => endY,
+      scrollTrigger: {
+        trigger: '.welcome-section',
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: true,
+        markers: true // Remove for production
+      }
+    });
       gsap.timeline({
         scrollTrigger: {
           trigger: ".welcome-section",
@@ -97,4 +132,21 @@
   transform: scale(1.1);
 }
 
+.introduction-section h2 {
+  font-size: 4em;
+  margin-bottom: 1rem;
+}
+
+.introduction-section p {
+  font-size: 1.2em;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Ensure the animated "Git" text is always visible */
+.git {
+  position: absolute;
+  z-index: 10;
+  white-space: nowrap; /* Prevents breaking into a new line */
+}
 </style>
