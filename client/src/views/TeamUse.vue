@@ -1,15 +1,15 @@
 <template>
-    <h1>Organisation Use</h1>
+    <h1>Team Use</h1>
   </template>
   
   <script>
   export default {
-    name: 'OrganisationUse'
+    name: 'TeamUse',
   }
   </script>
   
   <style scoped>
-    .h1{
+    h1{
         font-size: 6rem;
     }
 </style>
